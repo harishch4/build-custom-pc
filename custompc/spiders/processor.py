@@ -54,11 +54,6 @@ class ProcessorSpider(scrapy.Spider):
             '//div[contains(@class,"octopus-pc-card")]')
         for product_content in content:
             item['site'] = "Amazon"
-            # item['processorName'] = product_content.xpath('.//div[starts-with(@class,"product-card__name")]/text()').extract_first()
-            # # item['processorLink'] = product_content.xpath(
-            # #     './/a[starts-with(@class="woocommerce-LoopProduct-link")]/@href').extract_first()
-            # item['processorPrice'] = product_content.xpath(
-            #     './/span[@class="collection_price"]/text()').extract_first()
             yield (item)
     def tsptech_processors(self, response):
         print("inside tpstech_processors")
@@ -119,12 +114,8 @@ class ProcessorSpider(scrapy.Spider):
     def mdcomputers_processors(self, response):
         print("inside mdcomputers_processors")
         item = Processor()
-        # Get the HTML block where all the products are listed
-        # <ul> HTML element with the "products-listing small" class name
         content = response.xpath(
             '//div[starts-with(@class,"product-item-container")]')
-
-        # loop through the <li> elements with the "product-item" class name in the content
         for product_content in content:
             item['site'] = "MDComputers"
             item['processorName'] = product_content.xpath(
@@ -133,36 +124,8 @@ class ProcessorSpider(scrapy.Spider):
                 './/div[@class="product-image-container"]//a/@href').extract_first()
             item['processorPrice'] = product_content.xpath(
                 './/span[@class="price-new"]/text()').extract_first()
-            # # get the product details and populate the items
-            # item['productId'] = product_content.xpath(
-            #     './/a/@data-id').extract_first()
-            # item['productName'] = product_content.xpath(
-            #     './/img/@title').extract_first()
-
-            # item['priceSale'] = product_content.xpath(
-            #     './/ins[@class="price-payable"]/text()').extract_first()
-
-            # item['priceOriginal'] = product_content.xpath(
-            #     './/del[@class="price-psfx"]/text()').extract_first()
-
-            # if item['priceOriginal'] == None:
-            #     item['priceOriginal'] = item['priceSale']
-
-            # item['imageLink'] = product_content.xpath(
-            #     './/img/@data-original').extract_first()
-            # item['productLink'] = "https://www.boyner.com.tr" + \
-            #     product_content.xpath('.//a/@href').extract_first()
-
-            # image_urls.append(item['imageLink'])
-
-            # item['company'] = "BOYNER"
-            # item['gender'] = response.meta['gender']
-
-            # if item['productId'] == None:
-            #     break
 
             yield (item)
-            # yield ImgData(image_urls=image_urls)
 
     def parse(self, response):
         pass
