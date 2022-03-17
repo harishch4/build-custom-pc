@@ -16,7 +16,7 @@ class ProcessorSpider(scrapy.Spider):
     def start_requests(self):
         no_pagination = ["TPSTech","ThinkPC"]
         meta = { 'dont_redirect': True, 'handle_httpstatus_list': [302] }
-        with open("/home/harry/github/custompc/csvFiles/processors.csv", "rU") as f:
+        with open("../csvFiles/processors.csv", "rU") as f:
             reader = csv.DictReader(f)
             for row in reader:
                 if row['process'] == '0':

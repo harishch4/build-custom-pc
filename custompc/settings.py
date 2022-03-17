@@ -68,7 +68,7 @@ ITEM_PIPELINES = {
    'custompc.pipelines.CustompcPipeline': 1,
 }
 
-IMAGES_STORE = '/home/harry/github/custompc/images_scraped'
+# IMAGES_STORE = '/home/harry/github/custompc/images_scraped'
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True
