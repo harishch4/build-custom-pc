@@ -1,0 +1,1 @@
+worker: scrapy crawl -o jsonFiles/rawdata_processors.json -t jsonlines processor
