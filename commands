@@ -1,0 +1,15 @@
+https://towardsdatascience.com/web-scraping-of-10-online-shops-in-30-minutes-with-python-and-scrapy-a7f66e42446d
+
+#install the scrapy
+$ pip install scrapy#install the image for downloading the product images
+$ pip install image#start web scraping project with scraps
+$ scrapy startproject fashionWebScraping
+$ cd fashionWebScraping
+$ ls#create project folders which are explained below
+$ mkdir csvFiles
+$ mkdir images_scraped
+$ mkdir jsonFiles
+$ mkdir utilityScripts
+
+scrapy genspider mdcomputers mdcomputers.in
+scrapy crawl -o jsonFiles/rawdata_processors.json -t jsonlines processor

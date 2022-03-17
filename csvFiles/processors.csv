@@ -1,0 +1,7 @@
+process,site,url
+1,"MDComputers","https://mdcomputers.in/processor?page={}"
+1,"PCShop","https://www.pcshop.in/product-category/processor/page/{}/?orderby=popularity"
+1,"ThinkPC","https://www.thinkpc.in/product-category/processor"
+1,"VedantComputers","https://www.vedantcomputers.com/pc-components/processor?page={}"
+1,"TPSTech","https://www.tpstech.in/collections/processors"
+0,"Amazon","https://www.amazon.in/Processors/b?ie=UTF8&node=1375391031"
