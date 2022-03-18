@@ -25,7 +25,7 @@ jsonFiles/final_processors.json
 - [VedantComputers](https://www.vedantcomputers.com/)
 - [TPSTech](https://www.tpstech.in/)
 
-
+### Sample output:
 ```sh
 Processor                     	MDComputers	    PCShop	   ThinkPC	    Vedant	   TPSTech
 AMD RYZEN 5-5600X             	         0	    21,999	     42000	₹22,250.00	Rs. 22,299
