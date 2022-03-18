@@ -2,6 +2,7 @@
 from matplotlib import lines
 import pandas as pd
 import json
+import os
 
 
 
@@ -10,7 +11,8 @@ pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 pd.set_option('display.width', None)
 pd.set_option('display.max_colwidth', -1)
-filepath = "../jsonFiles/rawdata_processors.json"
+root_path = os.environ['CUSTOMPC_HOME']
+filepath = root_path+"/jsonFiles/rawdata_processors.json"
 df = pd.read_json(filepath, lines=True)
 processorNames = df['processorName'].str.upper()
 processorPrice = df['processorPrice'].str.upper()
@@ -105,5 +107,5 @@ for k, v in processorsDict.items():
 # Serializing json 
 json_object = json.dumps(processorsDict, indent = 4)
 # Writing to sample.json
-with open("../jsonFiles/final_processors.json", "w+") as outfile:
+with open(root_path+"/jsonFiles/final_processors.json", "w+") as outfile:
     outfile.write(json_object)

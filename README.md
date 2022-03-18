@@ -1,6 +1,12 @@
 # build-custom-pc
 ## _Comparing prices across webstores._
 
+### Initial setup:
+```sh
+pip3 install -r requirements.txt
+export CUSTOMPC_HOME="path_to_root_dir"
+```
+
 ### Run Steps:
 ```sh
 cd bin

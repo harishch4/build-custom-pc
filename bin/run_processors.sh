@@ -1,5 +1,4 @@
-cd ../
-rm jsonFiles/*_processors.json
-scrapy crawl -o jsonFiles/rawdata_processors.json -t jsonlines processor
-cd utilityScripts
-python3 jsonPrep.py
+cd $CUSTOMPC_HOME
+rm $CUSTOMPC_HOME/jsonFiles/*_processors.json
+scrapy crawl -o $CUSTOMPC_HOME/jsonFiles/rawdata_processors.json -t jsonlines processor
+python3 $CUSTOMPC_HOME/utilityScripts/jsonPrep.py

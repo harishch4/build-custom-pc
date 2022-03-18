@@ -5,6 +5,7 @@ import csv
 from scrapy.http import Request
 from custompc.items import Processor
 from lxml import etree
+import os
 
 
 class ProcessorSpider(scrapy.Spider):
@@ -14,9 +15,10 @@ class ProcessorSpider(scrapy.Spider):
 
 
     def start_requests(self):
+        root_path = os.environ['CUSTOMPC_HOME']
         no_pagination = ["TPSTech","ThinkPC"]
         meta = { 'dont_redirect': True, 'handle_httpstatus_list': [302] }
-        with open("../csvFiles/processors.csv", "rU") as f:
+        with open(root_path+"/csvFiles/processors.csv", "rU") as f:
             reader = csv.DictReader(f)
             for row in reader:
                 if row['process'] == '0':
